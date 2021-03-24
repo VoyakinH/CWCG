@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Light Shafts</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="MWidget" native="true">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="ObjSpin">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>130</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Поворот объекта</string>
+    </property>
+    <widget class="QPushButton" name="ButModelRotLeft">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>65</width>
+       <height>65</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ButModelRotRight">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>65</width>
+       <height>65</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="ObjChoose">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>10</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Выбор объекта</string>
+    </property>
+    <widget class="QPushButton" name="ButRenderTree">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>65</width>
+       <height>65</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Дерево</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ButRenderGrid">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>65</width>
+       <height>65</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Решётка</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ButRenderTree</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ButRenderTree</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>459</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButRenderTree</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ButRenderGrid</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButRenderGrid</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ButRenderGrid</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButRenderGrid</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ButRenderTree</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
